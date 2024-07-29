@@ -14,6 +14,16 @@
 		AAF3699D2C513C220038FB06 /* ItunseCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAF3699B2C513C220038FB06 /* ItunseCoreData.xcdatamodeld */; };
 		AAF3699F2C513C240038FB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF3699E2C513C240038FB06 /* Assets.xcassets */; };
 		AAF369A22C513C240038FB06 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AAF369A12C513C240038FB06 /* Base */; };
+		AAF369AB2C5170110038FB06 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAF369AA2C5170110038FB06 /* SnapKit */; };
+		AAF369AD2C5170110038FB06 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = AAF369AC2C5170110038FB06 /* SnapKit-Dynamic */; };
+		AAF369AF2C51701C0038FB06 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369AE2C51701C0038FB06 /* CollectionViewCell.swift */; };
+		AAF369B12C51707B0038FB06 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369B02C51707B0038FB06 /* NetworkManager.swift */; };
+		AAF369B32C5170940038FB06 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369B22C5170940038FB06 /* TabBarController.swift */; };
+		AAF369B52C5171060038FB06 /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369B42C5171060038FB06 /* AlbumDetailsViewController.swift */; };
+		AAF369B72C51711A0038FB06 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369B62C51711A0038FB06 /* SearchHistoryViewController.swift */; };
+		AAF369BA2C51A27F0038FB06 /* AlbumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369B92C51A27F0038FB06 /* AlbumEntity.swift */; };
+		AAF369BC2C57F2350038FB06 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369BB2C57F2350038FB06 /* DataManager.swift */; };
+		AAF369BE2C57F2870038FB06 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369BD2C57F2870038FB06 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,14 @@
 		AAF3699E2C513C240038FB06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAF369A12C513C240038FB06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAF369A32C513C240038FB06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAF369AE2C51701C0038FB06 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		AAF369B02C51707B0038FB06 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AAF369B22C5170940038FB06 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AAF369B42C5171060038FB06 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		AAF369B62C51711A0038FB06 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
+		AAF369B92C51A27F0038FB06 /* AlbumEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntity.swift; sourceTree = "<group>"; };
+		AAF369BB2C57F2350038FB06 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		AAF369BD2C57F2870038FB06 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF369AB2C5170110038FB06 /* SnapKit in Frameworks */,
+				AAF369AD2C5170110038FB06 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +81,11 @@
 				AAF369922C513C220038FB06 /* AppDelegate.swift */,
 				AAF369942C513C220038FB06 /* SceneDelegate.swift */,
 				AAF369962C513C220038FB06 /* ViewController.swift */,
+				AAF369AE2C51701C0038FB06 /* CollectionViewCell.swift */,
+				AAF369B22C5170940038FB06 /* TabBarController.swift */,
+				AAF369B42C5171060038FB06 /* AlbumDetailsViewController.swift */,
+				AAF369B62C51711A0038FB06 /* SearchHistoryViewController.swift */,
+				AAF369B82C51A2660038FB06 /* New Group */,
 				AAF369982C513C220038FB06 /* Main.storyboard */,
 				AAF3699E2C513C240038FB06 /* Assets.xcassets */,
 				AAF369A02C513C240038FB06 /* LaunchScreen.storyboard */,
@@ -68,6 +93,17 @@
 				AAF3699B2C513C220038FB06 /* ItunseCoreData.xcdatamodeld */,
 			);
 			path = ItunseCoreData;
+			sourceTree = "<group>";
+		};
+		AAF369B82C51A2660038FB06 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				AAF369B92C51A27F0038FB06 /* AlbumEntity.swift */,
+				AAF369B02C51707B0038FB06 /* NetworkManager.swift */,
+				AAF369BB2C57F2350038FB06 /* DataManager.swift */,
+				AAF369BD2C57F2870038FB06 /* CoreDataManager.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +122,10 @@
 			dependencies = (
 			);
 			name = ItunseCoreData;
+			packageProductDependencies = (
+				AAF369AA2C5170110038FB06 /* SnapKit */,
+				AAF369AC2C5170110038FB06 /* SnapKit-Dynamic */,
+			);
 			productName = ItunseCoreData;
 			productReference = AAF3698F2C513C220038FB06 /* ItunseCoreData.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +154,9 @@
 				Base,
 			);
 			mainGroup = AAF369862C513C220038FB06;
+			packageReferences = (
+				AAF369A92C5170110038FB06 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = AAF369902C513C220038FB06 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,9 +184,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF369B12C51707B0038FB06 /* NetworkManager.swift in Sources */,
+				AAF369AF2C51701C0038FB06 /* CollectionViewCell.swift in Sources */,
+				AAF369B52C5171060038FB06 /* AlbumDetailsViewController.swift in Sources */,
 				AAF369972C513C220038FB06 /* ViewController.swift in Sources */,
 				AAF369932C513C220038FB06 /* AppDelegate.swift in Sources */,
+				AAF369B32C5170940038FB06 /* TabBarController.swift in Sources */,
+				AAF369BE2C57F2870038FB06 /* CoreDataManager.swift in Sources */,
 				AAF3699D2C513C220038FB06 /* ItunseCoreData.xcdatamodeld in Sources */,
+				AAF369B72C51711A0038FB06 /* SearchHistoryViewController.swift in Sources */,
+				AAF369BC2C57F2350038FB06 /* DataManager.swift in Sources */,
+				AAF369BA2C51A27F0038FB06 /* AlbumEntity.swift in Sources */,
 				AAF369952C513C220038FB06 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +418,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AAF369A92C5170110038FB06 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AAF369AA2C5170110038FB06 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAF369A92C5170110038FB06 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		AAF369AC2C5170110038FB06 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAF369A92C5170110038FB06 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AAF3699B2C513C220038FB06 /* ItunseCoreData.xcdatamodeld */ = {
