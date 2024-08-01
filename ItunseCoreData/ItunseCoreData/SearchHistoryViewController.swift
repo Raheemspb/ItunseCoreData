@@ -10,12 +10,22 @@ import UIKit
 class SearchHistoryViewController: UIViewController {
 
     let identifire = "searchCell"
+    let coreDataManager = CoreDataManager.shared
     var searchHistory = [String]()
-
     var tableView = UITableView(frame: .zero, style: .plain)
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        coreDataManager.getAllSearchText { [weak self] searchTexts in
+            self?.searchHistory = searchTexts
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
 
     private func setup() {
@@ -31,7 +41,6 @@ class SearchHistoryViewController: UIViewController {
             make.leading.trailing.equalToSuperview()
         }
     }
-
 }
 
 extension SearchHistoryViewController: UITableViewDataSource {
@@ -42,6 +51,7 @@ extension SearchHistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifire, for: indexPath)
         cell.textLabel?.text = searchHistory[indexPath.row]
+
         return cell
     }
 }

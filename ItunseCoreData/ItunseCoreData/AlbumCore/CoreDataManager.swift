@@ -68,17 +68,45 @@ class CoreDataManager {
          }
      }
 
-//    func save(albums: [Album], complition: @escaping () -> Void) {
-//        let viewContext = persistentContainer.viewContext
-//
-//        viewContext.perform {
-//            for album in albums {
-//                _ = try? AlbumEntity.findOrCreate(album, context: viewContext)
-//            }
-//
-//            try? viewContext.save()
-//            complition()
-//        }
-//    }
+    func getAllSearchText(_ completion: @escaping ([String]) -> Void) {
+        let viewContext = persistentContainer.viewContext
 
+        viewContext.perform {
+            do {
+                let searchTextEntities = try SearchTextEntity.all(viewContext)
+                let dbSearchTexts = searchTextEntities.compactMap { $0.searchText }
+                completion(dbSearchTexts)
+            } catch {
+                print("Error fetching search texts: \(error.localizedDescription)")
+                completion([])
+            }
+        }
+    }
+
+    func save(texts: [String], completion: @escaping () -> Void) {
+         let context = persistentContainer.viewContext
+
+         context.perform {
+             do {
+                 for text in texts {
+                     _ = try SearchTextEntity.findOrCreate(text, context: context)
+                 }
+                 try context.save()
+                 completion()
+             } catch {
+                 print("Failed to save albums: \(error)")
+                 completion()
+             }
+         }
+     }
+
+    func update(text: String) {
+        getAllSearchText { [weak self] texts in
+            var searchTexts = texts
+            searchTexts.append(text)
+            self?.save(texts: searchTexts) {
+
+            }
+        }
+    }
 }

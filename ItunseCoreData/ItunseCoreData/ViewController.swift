@@ -21,12 +21,6 @@ final class ViewController: UIViewController {
         setupCollectionView()
     }
 
-    private func setupSearchBar() {
-        searchBar.placeholder = "Search"
-//        searchBar.delegate = self
-        navigationItem.titleView = searchBar
-        }
-
     private func setupCollectionView() {
         collectionView = UICollectionView(
             frame: .zero,
@@ -50,7 +44,6 @@ final class ViewController: UIViewController {
 
         return layout
     }
-
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -58,8 +51,13 @@ extension ViewController: UICollectionViewDataSource {
         albums.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseId, for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: CollectionViewCell.reuseId,
+            for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
 
         let album = albums[indexPath.item]
         guard let imageUrl = URL(string: album.artworkUrl100) else { return cell }

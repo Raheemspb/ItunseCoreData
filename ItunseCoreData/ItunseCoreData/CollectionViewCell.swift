@@ -7,9 +7,7 @@
 
 import UIKit
 
-import UIKit
-
-class CollectionViewCell: UICollectionViewCell {
+final class CollectionViewCell: UICollectionViewCell {
     static let reuseId = "CollectionViewCell"
 
     var albumImage: UIImageView = {
@@ -85,5 +83,4 @@ class CollectionViewCell: UICollectionViewCell {
         singerLabel.text = nil
         trackCountLabel.text = nil
     }
-
 }

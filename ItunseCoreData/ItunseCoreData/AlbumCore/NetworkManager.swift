@@ -17,7 +17,6 @@ struct Album: Codable {
     let artworkUrl100: String
     let trackCount: Int
 
-
     init(entity: AlbumEntity) {
         self.artistId = Int(entity.artistId)
         self.artistName = entity.artistName ?? ""
@@ -30,7 +29,6 @@ struct Album: Codable {
 class NetworkManager {
 
     static let shared = NetworkManager()
-//    let dataManager = DataManager()
 
     func fetchAlbum(albumName: String) -> String {
         let url = "https://itunes.apple.com/search?term=\(albumName)&entity=album&attribute=albumTerm"

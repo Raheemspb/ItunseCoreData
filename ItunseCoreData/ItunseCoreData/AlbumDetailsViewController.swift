@@ -72,18 +72,4 @@ class AlbumDetailsViewController: UIViewController {
             }
         }
     }
-
-//    func confiqure(indexPath: IndexPath) {
-//        guard let imageUrl = URL(string: viewController.albums[indexPath.item].artworkUrl100) else { return }
-//        DispatchQueue.global().async {
-//            guard let imageData = try? Data(contentsOf: imageUrl) else { return }
-//
-//            DispatchQueue.main.async {
-//                self.albumImage.image = UIImage(data: imageData)
-//            }
-//        }
-//
-//    }
-
-
 }

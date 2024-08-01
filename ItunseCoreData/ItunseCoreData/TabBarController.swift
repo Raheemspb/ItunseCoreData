@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import UIKit
 
 class TabBarController: UITabBarController {
@@ -14,18 +13,35 @@ class TabBarController: UITabBarController {
     var searchBar = UISearchBar()
     let networkManager = NetworkManager()
     let dataManager = DataManager()
+    let coreDataManager = CoreDataManager.shared
     let searchHistoryViewController = SearchHistoryViewController()
     let viewController = ViewController()
     var albums = [Album]()
+    var searchTexts = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViewControllers()
         setupSearchBar()
-//        if let searchTexts = networkManager.getSearchTextFromKeychain() {
-//            performInitialSearch(with: searchTexts.last!)
-//        }
+
+        coreDataManager.getAllAlbums { [weak self] albums in
+            guard let self = self else { return }
+            self.albums = albums
+            DispatchQueue.main.async {
+                self.viewController.albums = albums
+                self.viewController.collectionView.reloadData()
+            }
+        }
+
+        coreDataManager.getAllSearchText { [weak self] texts in
+            guard let self = self else { return }
+            self.searchTexts = texts
+            DispatchQueue.main.async {
+                self.searchHistoryViewController.searchHistory = texts
+                self.searchHistoryViewController.tableView.reloadData()
+            }
+        }
     }
 
     private func setupSearchBar() {
@@ -61,28 +77,17 @@ extension TabBarController: UISearchBarDelegate {
             return
         }
 
+        print("AAA")
         dataManager.getAlbums(albumName: searchText) { [weak self] albums in
 
             self?.albums = albums
+            print("BBB")
+            self?.viewController.albums = albums
+            self?.coreDataManager.update(text: searchText)
 
             DispatchQueue.main.async {
-                self?.viewController.albums = albums
                 self?.viewController.collectionView.reloadData()
-                self?.searchHistoryViewController.tableView.reloadData()
             }
         }
-
-//        networkManager.getAlbums(albumName: searchText) { [weak self] albums in
-//
-//            self?.albums = albums
-//
-//            DispatchQueue.main.async {
-//                self?.viewController.albums = albums
-//                self?.viewController.collectionView.reloadData()
-//                self?.searchHistoryViewController.tableView.reloadData()
-//            }
-//        }
-
-        //        searchBar.resignFirstResponder()
     }
 }

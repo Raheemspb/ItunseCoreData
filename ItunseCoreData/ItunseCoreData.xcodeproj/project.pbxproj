@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA623D262C592843006C57D0 /* SearchTextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA623D252C592843006C57D0 /* SearchTextEntity.swift */; };
 		AAF369932C513C220038FB06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369922C513C220038FB06 /* AppDelegate.swift */; };
 		AAF369952C513C220038FB06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369942C513C220038FB06 /* SceneDelegate.swift */; };
 		AAF369972C513C220038FB06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF369962C513C220038FB06 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA623D252C592843006C57D0 /* SearchTextEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextEntity.swift; sourceTree = "<group>"; };
 		AAF3698F2C513C220038FB06 /* ItunseCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunseCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF369922C513C220038FB06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF369942C513C220038FB06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA623D272C592852006C57D0 /* SearchTextCore */ = {
+			isa = PBXGroup;
+			children = (
+				AA623D252C592843006C57D0 /* SearchTextEntity.swift */,
+			);
+			path = SearchTextCore;
+			sourceTree = "<group>";
+		};
 		AAF369862C513C220038FB06 = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +95,8 @@
 				AAF369B22C5170940038FB06 /* TabBarController.swift */,
 				AAF369B42C5171060038FB06 /* AlbumDetailsViewController.swift */,
 				AAF369B62C51711A0038FB06 /* SearchHistoryViewController.swift */,
-				AAF369B82C51A2660038FB06 /* New Group */,
+				AAF369B82C51A2660038FB06 /* AlbumCore */,
+				AA623D272C592852006C57D0 /* SearchTextCore */,
 				AAF369982C513C220038FB06 /* Main.storyboard */,
 				AAF3699E2C513C240038FB06 /* Assets.xcassets */,
 				AAF369A02C513C240038FB06 /* LaunchScreen.storyboard */,
@@ -95,7 +106,7 @@
 			path = ItunseCoreData;
 			sourceTree = "<group>";
 		};
-		AAF369B82C51A2660038FB06 /* New Group */ = {
+		AAF369B82C51A2660038FB06 /* AlbumCore */ = {
 			isa = PBXGroup;
 			children = (
 				AAF369B92C51A27F0038FB06 /* AlbumEntity.swift */,
@@ -103,7 +114,7 @@
 				AAF369BB2C57F2350038FB06 /* DataManager.swift */,
 				AAF369BD2C57F2870038FB06 /* CoreDataManager.swift */,
 			);
-			path = "New Group";
+			path = AlbumCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +127,7 @@
 				AAF3698B2C513C220038FB06 /* Sources */,
 				AAF3698C2C513C220038FB06 /* Frameworks */,
 				AAF3698D2C513C220038FB06 /* Resources */,
+				AA623D282C5BCE30006C57D0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -179,6 +191,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AA623D282C5BCE30006C57D0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AAF3698B2C513C220038FB06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -196,6 +230,7 @@
 				AAF369BC2C57F2350038FB06 /* DataManager.swift in Sources */,
 				AAF369BA2C51A27F0038FB06 /* AlbumEntity.swift in Sources */,
 				AAF369952C513C220038FB06 /* SceneDelegate.swift in Sources */,
+				AA623D262C592843006C57D0 /* SearchTextEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77KKK88QP8;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ItunseCoreData/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -376,6 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77KKK88QP8;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ItunseCoreData/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
