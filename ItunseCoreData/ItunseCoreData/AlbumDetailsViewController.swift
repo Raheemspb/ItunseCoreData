@@ -37,6 +37,7 @@ class AlbumDetailsViewController: UIViewController {
         artistName.snp.makeConstraints { make in
             make.top.equalTo(albumImage)
             make.leading.equalTo(albumImage.snp.trailing).inset(-20)
+            make.trailing.equalToSuperview().inset(10)
         }
 
         trackCount.snp.makeConstraints { make in

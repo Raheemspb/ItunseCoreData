@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class ViewController: UIViewController {
-
     var searchBar = UISearchBar()
     var collectionView: UICollectionView!
     let networkManager = NetworkManager()
